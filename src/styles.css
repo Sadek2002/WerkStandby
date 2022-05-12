@@ -1,0 +1,64 @@
+body {
+  background-color: cyan;
+}
+
+/* App.js CSS */
+
+.whiteBox {
+  display: block;
+  width: 50px;
+  height: auto;
+  background-color: white;
+  width: 1000px;
+  height: auto;
+}
+
+.whiteBoxTitle {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.whiteBoxSubtitle {
+  font-size: 28px;
+  margin-left: 40%;
+}
+
+.whiteBoxText {
+  font-size: 20px;
+  text-align: center;
+}
+
+.whiteBoxText2 {
+  font-size: 20px;
+  margin-left: 40%;
+}
+
+.whiteBoxCyanText {
+  font-size: 20px;
+  color: #56d1b9;
+  text-align: center;
+}
+
+.whiteBoxImage {
+  width: 300px;
+  height: 300px;
+  background-color: black;
+  float: left;
+  display: inline-block;
+  margin: auto auto 30px 30px;
+}
+
+.whiteBoxButton {
+  background-color: #29cb8b;
+  border: none;
+  font-size: 20px;
+  width: 100px;
+  height: 40px;
+  color: white;
+  margin-top: 100px;
+  margin-left: 540px;
+  display: inline-block;
+  margin-bottom: 30px;
+}
