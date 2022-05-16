@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-
+import Posts from "../Posts";
 import App from "./App";
 
 const rootElement = document.getElementById("root");
@@ -15,5 +15,6 @@ console.log(loadTime);
 root.render(
   <StrictMode>
     <App />
+    <Posts />
   </StrictMode>
 );
