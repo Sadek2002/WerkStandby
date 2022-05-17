@@ -8,10 +8,9 @@
   ],
   "main": "src/index.js",
   "dependencies": {
-    "axios": "0.27.2",
-    "i18n": "0.14.2",
     "react": "18.0.0",
     "react-dom": "18.0.0",
+    "react-intl": "5.25.1",
     "react-scripts": "4.0.0"
   },
   "devDependencies": {

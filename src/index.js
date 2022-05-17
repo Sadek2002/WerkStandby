@@ -1,20 +1,18 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import Posts from "../Posts";
+import React from "react";
+import ReactDOM from "react-dom";
 import App from "./App";
+import * as serviceWorker from "./serviceWorker";
+import { IntlProvider } from "react-intl";
+import Wrapper from "./components/Wrapper";
 
-const rootElement = document.getElementById("root");
-const root = createRoot(rootElement);
-
-var loadTime =
-  window.performance.timing.domContentLoadedEventEnd -
-  window.performance.timing.navigationStart;
-
-console.log(loadTime);
-
-root.render(
-  <StrictMode>
-    <App />
-    <Posts />
-  </StrictMode>
+ReactDOM.render(
+  <Wrapper>
+    <App date={Date.now()} />
+  </Wrapper>,
+  document.getElementById("root")
 );
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();

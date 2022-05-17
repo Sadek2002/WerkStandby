@@ -1,55 +1,113 @@
 import "./styles.css";
-import React, { Component } from "react";
+import React, { useContext } from "react";
 import logo from "/img/image.png";
+import { FormattedMessage } from "react-intl";
+import { Context } from "./components/Wrapper";
 
-class Header extends Component {
-  change(option) {
-    localStorage.setItem("lang", option.target.value);
-    window.location.reload();
-  }
+function App(props) {
+  const context = useContext(Context);
 
-  render() {
-    const lang = localStorage.getItem("lang") || "nl";
-    return (
-      <nav className="container mb-4 mt-4">
+  return (
+    <nav className="container mb-4 mt-4">
+      <div className="whiteBox">
         <div className="row">
           <div className="col-10"></div>
           <div className="col-2">
             <select
-              className="custom-select pull-right"
-              onChange={this.change}
-              value={lang}
+              className="dropdown"
+              value={context.locale}
+              onChange={context.selectLanguage}
             >
-              <option value="nl">Dutch</option>
+              <option value="nl">Nederlands</option>
               <option value="en">English</option>
-              <option value="pl">Polish</option>
+              <option value="pl">Polskie</option>
             </select>
           </div>
         </div>
 
-        <div className="whiteBox">
-          <p className="whiteBoxTitle">Wat je vooraf moet weten</p>
-          <p className="whiteBoxText">
-            De volgende punten zijn belangrijk om te weten voor je aan de slag
-            gaat als vrije werker:
-          </p>
-          <p className="whiteBoxCyanText">
-            Klik op de groene 'verder' knop als je de tekst gelezen hebt.
-          </p>
-          <img class="image-css" src={logo}></img>
-          <p className="whiteBoxSubtitle">1. Eigen baas</p>
-          <p className="whiteBoxText2">
-            Als vrije werker ben je een freelancer (zonder inschrijving bij de
-            KvK).
-          </p>
-          <p className="whiteBoxText2">
-            Je bepaalt dus zelf welke klussen je aanneemt!
-          </p>
-          <button className="whiteBoxButton">Verder</button>
-        </div>
-      </nav>
-    );
-  }
+        <p className="whiteBoxTitle">
+          <FormattedMessage
+            defaultMessage="Wat je vooraf moet weten"
+            id="app.title"
+            values={{
+              fileName: "src/App.js",
+              code: (word) => <strong>{word}</strong>
+            }}
+          />
+        </p>
+
+        <p className="whiteBoxText">
+          <FormattedMessage
+            defaultMessage="De volgende punten zijn belangrijk om te weten voor je aan de slag
+            gaat als vrije werker:"
+            id="app.text1"
+            values={{
+              fileName: "src/App.js",
+              code: (word) => <strong>{word}</strong>
+            }}
+          />
+        </p>
+
+        <p className="whiteBoxCyanText">
+          <FormattedMessage
+            defaultMessage="Klik op de groene 'verder' knop als je de tekst gelezen hebt."
+            id="app.cyantext"
+            values={{
+              fileName: "src/App.js",
+              code: (word) => <strong>{word}</strong>
+            }}
+          />
+        </p>
+
+        <img class="image-css" alt="test" src={logo}></img>
+
+        <p className="whiteBoxSubtitle">
+          <FormattedMessage
+            defaultMessage="1. Eigen baas"
+            id="subtitle"
+            values={{
+              fileName: "src/App.js",
+              code: (word) => <strong>{word}</strong>
+            }}
+          />
+        </p>
+
+        <p className="whiteBoxText2">
+          <FormattedMessage
+            defaultMessage="Als vrije werker ben je een freelancer (zonder inschrijving bij de
+              KvK)."
+            id="app.text2"
+            values={{
+              fileName: "src/App.js",
+              code: (word) => <strong>{word}</strong>
+            }}
+          />
+        </p>
+
+        <p className="whiteBoxText2">
+          <FormattedMessage
+            defaultMessage="Je bepaalt dus zelf welke klussen je aanneemt!"
+            id="app.text3"
+            values={{
+              fileName: "src/App.js",
+              code: (word) => <strong>{word}</strong>
+            }}
+          />
+        </p>
+
+        <button className="whiteBoxButton">
+          <FormattedMessage
+            defaultMessage="Verder"
+            id="app.button"
+            values={{
+              fileName: "src/App.js",
+              code: (word) => <strong>{word}</strong>
+            }}
+          />
+        </button>
+      </div>
+    </nav>
+  );
 }
 
-export default Header;
+export default App;
