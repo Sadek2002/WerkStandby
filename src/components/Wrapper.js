@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { IntlProvider } from "react-intl";
 import English from "../lang/en.json";
 import Dutch from "../lang/nl.json";
+import Polish from "../lang/pl.json";
 
 export const Context = React.createContext();
 
@@ -13,6 +14,10 @@ if (local === "en") {
 } else {
   if (local === "nl") {
     lang = Dutch;
+  } else {
+    if (local === "pl") {
+      lang = Polish;
+    }
   }
 }
 
@@ -29,6 +34,10 @@ const Wrapper = (props) => {
     } else {
       if (newLocale === "nl") {
         setMessages(Dutch);
+      } else {
+        if (newLocale === "pl") {
+          setMessages(Polish);
+        }
       }
     }
   }

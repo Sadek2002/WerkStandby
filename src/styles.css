@@ -54,7 +54,7 @@ body {
 }
 
 .whiteBoxButton {
-  background-color: #29cb8b;
+  background-color: #00cc8b;
   border: none;
   font-size: 20px;
   width: 100px;
@@ -66,9 +66,18 @@ body {
   margin-bottom: 30px;
 }
 
+.whiteBoxButton:hover {
+  background-color: #56d1b9;
+  cursor: pointer;
+}
+
 .dropdown {
   float: right;
   font-size: 20px;
   color: white;
   background-color: #29cb8b;
+}
+
+.dropdown:hover {
+  cursor: pointer;
 }
