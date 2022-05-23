@@ -3,12 +3,20 @@ import React, { useContext } from "react";
 import logo from "/img/image.png";
 import { FormattedMessage } from "react-intl";
 import { Context } from "./components/Wrapper";
+import { Route, Link, Routes } from "react-router-dom";
+
+import Next from "./components/Next";
 
 function App(props) {
   const context = useContext(Context);
 
   return (
     <nav className="container mb-4 mt-4">
+      <div className="App-intro">
+        <Routes>
+          <Route path="/next" component={Next} />
+        </Routes>
+      </div>
       <div className="whiteBox">
         <div className="row">
           <div className="col-10"></div>
@@ -96,14 +104,16 @@ function App(props) {
         </p>
 
         <button className="whiteBoxButton">
-          <FormattedMessage
-            defaultMessage="Verder"
-            id="app.button"
-            values={{
-              fileName: "src/App.js",
-              code: (word) => <strong>{word}</strong>
-            }}
-          />
+          <Link to="/next">
+            <FormattedMessage
+              defaultMessage="Verder"
+              id="app.button"
+              values={{
+                fileName: "src/App.js",
+                code: (word) => <strong>{word}</strong>
+              }}
+            />
+          </Link>
         </button>
       </div>
     </nav>
